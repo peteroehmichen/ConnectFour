@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: transparent;
+    padding: 10px;
+}
+
+.game {
+    position: relative;
+    width: 1050px;
+    height: 1050px;
+    border: 3px solid black;
+    overflow: hidden;
+    background-image: url(https://i.pinimg.com/originals/c9/44/5a/c9445ae885e4cf44a256baf7f6a52f51.jpg);
+}
+
+.header {
+    position: relative;
+    z-index: 2;
+    height: 25%;
+    margin-bottom: 30px;
+    color: white;
+    background-image: url(https://thumbs.dreamstime.com/b/planks-dark-old-wood-texture-background-170515350.jpg);
+}
+
+.headline {
+    text-align: center;
+    padding: 20px;
+    font-size: 3em;
+}
+
+.gridSet {
+    position: absolute;
+    z-index: 3;
+    visibility: hidden;
+}
+
+p {
+    display: inline-block;
+    margin: 6px 10px;
+    font-size: 1.5em;
+}
+
+button {
+    font-size: 1.2em;
+    padding: 3px;
+}
+
+.scoreBoard {
+    visibility: hidden;
+    display: flex;
+    font-size: 2em;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.joker {
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 0.5em;
+    background-color: rgba(0, 0, 0, 0.502);
+    border: 3px dotted red;
+}
+
+.one {
+    border-width: 0 0 10px 0;
+    border-color: white;
+    border-bottom-style: none;
+}
+
+.two {
+    border-width: 0 0 10px 0;
+    border-color: black;
+    border-bottom-style: none;
+}
+
+.currentPlayer {
+    border-style: solid;
+}
+
+.score {
+    padding: 15px;
+    background-color: black;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.endOfGame {
+    visibility: hidden;
+    width: 160px;
+    margin: 5px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.messageOne {
+    display: none;
+    position: absolute;
+    bottom: 15%;
+    left: 22%;
+    z-index: 3;
+}
+
+.messageTwo {
+    display: none;
+    position: absolute;
+    bottom: 15%;
+    z-index: 3;
+    left: 65%;
+}
+
+.board {
+    position: relative;
+    margin: 0 auto;
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./stone.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 2s;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+}
+
+.highscore {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 3;
+    padding: 70px;
+    border-radius: 150px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+td {
+    padding: 10px 30px 10px 10px;
+    border-bottom: 1px dotted white;
+    font-size: 1.2em;
+}
+
+.tableHead {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.tableWinner {
+    /* text-decoration: underline; */
+    font-weight: bold;
+}
+
+.column {
+    border-color: black;
+    border-style: solid;
+    margin: 3px;
+    border-width: 0 1px 1px 1px;
+}
+
+.row {
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.hole {
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.482);
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+}
+
+.playerOne .hole {
+    background-color: white;
+    animation-name: drop;
+    animation-duration: 1s;
+    animation-direction: normal;
+}
+
+.playerTwo .hole {
+    background-color: black;
+    animation-name: drop;
+    animation-duration: 1s;
+    animation-direction: normal;
+}
+
+.winnerCoin {
+    animation-name: glow;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.dropAll {
+    animation-name: jokerDrop;
+    animation-duration: 4s;
+    animation-direction: normal;
+}
+
+/* .rotate {
+    transform: rotate(180deg);
+    transition: transform 2s;
+} */
+
+@keyframes glow {
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: gold;
+    }
+}
+
+@keyframes drop {
+    0% {
+        transform: translateY(0%);
+    }
+    0% {
+        transform: translateY(-600px);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes jokerDrop {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(-232px);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}

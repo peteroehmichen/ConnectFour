@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Connect Four</title>
+</head>
+<body>
+    <div class="game">
+        <div class="header">
+            <div class="headline" id="title">Connect 4</div>
+            <div class="gridSet">
+                <p>Columns <input type="number" min="7" max="10" value="7" id="columns"></p>
+                <p>Rows <input type="number" min="6" max="10" value="6" id="rows"></p>
+                <p>Connects <input type="number" min="4" max="6" value="4" id="connects"></p></br>
+                <p>Player 1: <input type="text" value="Player One" id="player1"><input type="color" value="#ffffff" id="colorOne"></p>
+                <p>Player 2: <input type="text" Value="Player Two" id="player2"><input type="color" value="#000000" id="colorTwo"></p></br></br>
+                <button id="start">Start Game!</button>
+            </div>
+            <div class="scoreBoard">
+                <div class="joker first">180°</div>
+                <div class="one currentPlayer"></div>
+                <div class="score">0 : 0</div>
+                <div class="two"></div>
+                <div class="joker second">180°</div>
+            </div>
+            <div class="endOfGame">
+                <button class="restart">RESTART</button>
+                <button class ="showHighscore">Show Highscore</button>
+            </div>
+            <div class="messageOne">
+                <h1 id="one"></h1>
+            </div>
+            <div class="messageTwo">
+                <h1 id="two"></h1>
+            </div>
+        </div>
+        <div class="board">
+            <div class="overlay"></div>
+            <div class="highscore"></div>
+
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
